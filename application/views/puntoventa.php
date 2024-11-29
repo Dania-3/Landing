@@ -38,14 +38,21 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <img class="login" id="iconoLogin" src="imagenes/lgin.png" alt="Icono de login">
-                  </a>
+                  </a><!-- Sesion no iniciada-->
                   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item " data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar sesión</a>
                   </li>
                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#crearCuentaModal">Crear cuenta</a></li>
                   </ul>
+                        <!-- Inicio de sesion -->
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item " data-bs-toggle="modal" data-bs-target="#loginModal">Perfil</a>
+                    </li>
+                       <li><a class="dropdown-item">Cerrar sesion</a></li>
+                  </ul>
                 </li>
               </ul>
+              
             </div>
           </div>
         </nav>
@@ -73,10 +80,10 @@
                     <p class="sesion">Iniciar sesión</p>
                     <form>
                       <div class="mb-3 con">
-                        <input type="text" class="form-control inicio_sesion" id="usuario" placeholder="Usuario">
+                        <input type="text" class="form-control inicio_sesion" id="usuario" placeholder="Usuario" require>
                       </div>
                       <div class="mb-3 con">
-                        <input type="password" class="form-control inicio_sesion" id="contrasena" placeholder="Contraseña">
+                        <input type="password" class="form-control inicio_sesion" id="contrasena" placeholder="Contraseña" require>
                       </div>
                       <div class="mb-3 text-center">
                         <a href="#" class="contra">¿Olvidaste tu contraseña?</a>
@@ -776,18 +783,18 @@
             </div>
           </div>
           <div class="formulario">
-            <form>
+            <form method="POST" action="<?php echo base_url('contacto'); ?>">
               <div class="form-group">
                 <label for="name">Nombre</label>
-                <input type="text" id="name" class="form-control contacto_to" placeholder="Nombre">
+                <input type="text" id="name" name="nombre1" class="form-control contacto_to" placeholder="Nombre" required>
               </div>
               <div class="form-group">
                 <label for="phone">Teléfono</label>
-                <input type="text" id="phone" class="form-control contacto_to" placeholder="Teléfono">
+                <input type="text" id="phone" name="telefono1" class="form-control contacto_to" placeholder="Teléfono" required>
               </div>
               <div class="form-group">
                 <label for="email">Correo electrónico</label>
-                <input type="email" id="email" class="form-control contacto_to" placeholder="Correo electrónico">
+                <input type="email" id="email" name="correo1" class="form-control contacto_to" placeholder="Correo electrónico" required>
               </div>
 
 
